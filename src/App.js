@@ -11,7 +11,11 @@ class Counter extends Component {
       count: 0,
     }
   }
-
+  Clear = () => {
+    this.setState ({
+      count: 0,
+    })
+  }
   // this is where we are going to put our methods
   Increment = () => {
     this.setState ({
@@ -24,14 +28,17 @@ class Counter extends Component {
     })
   }
 
+
   render () {
     return (
       <div className="container">
         <div className="navbar">Counter</div>
         <div className="counter">
           <h1>{this.state.count}</h1>
+          <button type="button" onClick={this.Clear}>Clear</button>
           <button type="button" onClick={this.Increment}>Increment</button>
           <button type="button" onClick={this.Decrement}>Decrement</button>
+          <button type="button" onClick={this.SingleDouble}>Single Count</button>
         </div>
       </div>
     )
