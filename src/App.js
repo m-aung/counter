@@ -9,6 +9,7 @@ class Counter extends Component {
     this.state = {
       // never change the type of data.
       count: 0,
+      text: true,
     }
   }
   Clear = () => {
@@ -27,6 +28,11 @@ class Counter extends Component {
       count: this.state.count - 1,
     })
   }
+  SingleDouble = () => {
+      this.setState ({
+        text: !this.state.text
+      })
+  }
 
 
   render () {
@@ -38,7 +44,7 @@ class Counter extends Component {
           <button type="button" onClick={this.Clear}>Clear</button>
           <button type="button" onClick={this.Increment}>Increment</button>
           <button type="button" onClick={this.Decrement}>Decrement</button>
-          <button type="button" onClick={this.SingleDouble}>Single Count</button>
+          <button type="button" onClick={this.SingleDouble}>{this.state.text? "Single Count" : "Double Count"}</button>
         </div>
       </div>
     )
@@ -47,7 +53,3 @@ class Counter extends Component {
 
 // exporting the counter Component
 export default Counter;
-
-// create clear button
-// limit the limit 0-20
-// Incrementing  and Decrementing 2
